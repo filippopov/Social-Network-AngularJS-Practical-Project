@@ -1,4 +1,4 @@
-app.directive('publicLogin','',function(){
+app.directive('publicLogin',function(){
     return{
         controller:'HomeController',
         restrict:'E',

@@ -1,4 +1,4 @@
-app.directive('publicRegister','',function(){
+app.directive('publicRegister',function(){
     return{
         controller:'HomeController',
         restrict:'E',
