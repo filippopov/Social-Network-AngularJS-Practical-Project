@@ -7,19 +7,19 @@
             <form role="form">
                 <fieldset>
                     <div class="form-group">
-                        <input class="form-control" placeholder="Username" name="username" type="text" autofocus>
+                        <input class="form-control" placeholder="Username" name="username" type="text" autofocus ng-model="user.username">
                     </div>
                     <div class="form-group">
-                        <input class="form-control" placeholder="Password" name="password" type="password" value="">
+                        <input class="form-control" placeholder="Password" name="password" type="password" ng-model="user.password">
                     </div>
                     <div class="form-group">
-                        <input class="form-control" placeholder="Confirm Password" name="confirm-password" type="password" value="">
+                        <input class="form-control" placeholder="Confirm Password" name="confirm-password" type="password" ng-model="user.confirmPassword">
                     </div>
                     <div class="form-group">
-                        <input class="form-control" placeholder="Name" name="name" type="text" autofocus>
+                        <input class="form-control" placeholder="Name" name="name" type="text" ng-model="user.name">
                     </div>
                     <div class="form-group">
-                        <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus>
+                        <input class="form-control" placeholder="E-mail" name="email" type="email" ng-model="user.email">
                     </div>
                     <div class="radio">
                         <label>
@@ -32,8 +32,10 @@
                             <input type="radio" name="gender" id="other" value="other"/>Other
                         </label>
                     </div>
-                    <a href="index.html" class="btn btn-lg btn-success btn-block">Register</a>
+                    <!--<a href="index.html" class="btn btn-lg btn-success btn-block" ng-click="register(user)">Register</a>-->
+                    <button class="btn btn-lg btn-success btn-block" ng-click="register(user)">Register</button>
                 </fieldset>
+
             </form>
         </div>
     </div>
