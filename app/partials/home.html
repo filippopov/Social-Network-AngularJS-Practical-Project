@@ -1,13 +1,17 @@
-<header>
+<header ng-if="!isLoggedIn">
     <h1>Social Network</h1>
 </header>
 <div id="wrapper" ng-controller="HomeController">
-    <div class="row">
-        <div class="col-md-6" ng-controller="LoginController">
-            <public-login></public-login>
+    <div class="row" >
+        <div ng-controller="LoginController" >
+            <div class="col-md-6" ng-include="'partials/public-login.html'" ng-if="!isLoggedIn"></div>
         </div>
-        <div class="col-md-6" ng-controller="RegisterController">
-            <public-register></public-register>
-        </div>
+         <div ng-controller="RegisterController" >
+             <div  class="col-md-6" ng-include="'partials/public-register.html'" ng-if="!isLoggedIn"></div>
+         </div>
     </div>
+
+
+            <div ng-include="'partials/home-after-login.html'" ng-if="isLoggedIn"></div>
+
 </div>

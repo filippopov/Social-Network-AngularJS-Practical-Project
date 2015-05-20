@@ -5,7 +5,7 @@ app.factory('authentication',function(){
         localStorage.setItem(key,angular.toJson(data))
     }
 
-    function getUserData(data){
+    function getUserData(){
         return angular.fromJson(localStorage.getItem(key))
     }
 
@@ -23,10 +23,15 @@ app.factory('authentication',function(){
         localStorage.removeItem(key)
     }
 
+     function isLoggedIn(){
+         return !!getUserData()
+     }
+
     return{
         saveUser:saveUserData,
         getUser:getUserData,
         getHeaders:getHeaders,
-        removeUser:removeUser
+        removeUser:removeUser,
+        isLoggedIn:isLoggedIn
     }
 })

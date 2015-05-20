@@ -7,6 +7,7 @@ app.config(['$routeProvider',function($routeProvider){
         templateUrl:'../partials/home.html',
         controller:'HomeController'
     });
+
     $routeProvider.otherwise({
         redirectTo:'/'
     });
