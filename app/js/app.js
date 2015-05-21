@@ -13,6 +13,11 @@ app.config(['$routeProvider',function($routeProvider){
         controller:'getDataAboutMeController'
     });
 
+    $routeProvider.when('/profile/password',{
+        templateUrl:'../partials/change-password.html',
+        controller:'changePasswordController'
+    });
+
     $routeProvider.otherwise({
         redirectTo:'/'
     });
