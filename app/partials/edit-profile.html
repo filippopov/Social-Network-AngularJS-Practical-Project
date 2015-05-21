@@ -52,6 +52,39 @@
                     <!-- /input-group -->
                 </li>
 </nav>
+<h1>Edit Profil</h1>
+<div id="wrapper" ng-controller="getDataAboutMeController" >
+    <div class="col-md-4 col-md-offset-2">
+    <div class="login-panel panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Edit Profil</h3>
+        </div>
+        <div class="panel-body">
+            <form role="form">
+                <fieldset >
+                    <div class="form-group" >
+                        <input class="form-control" placeholder="{{data.name}}" name="name" type="text" ng-model="newData.name">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" placeholder="{{data.email}}" name="email" type="email" ng-model="newData.email">
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="gender" id="male" value="male"/>Male
+                        </label>
+                        <label>
+                            <input type="radio" name="gender"  id="female" value="female"/>Female
+                        </label>
+                        <label>
+                            <input type="radio" name="gender" id="other" value="other"/>Other
+                        </label>
+                    </div >
+                    <!--<a href="index.html" class="btn btn-lg btn-success btn-block" ng-click="register(user)">Register</a>-->
+                    <button class="btn btn-lg btn-success btn-block" ng-click="editProfile(newData)">Edit Profil</button>
+                </fieldset>
 
-
-
+            </form>
+        </div>
+    </div>
+</div>
+</div>

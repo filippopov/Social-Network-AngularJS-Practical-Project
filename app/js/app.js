@@ -8,6 +8,11 @@ app.config(['$routeProvider',function($routeProvider){
         controller:'HomeController'
     });
 
+    $routeProvider.when('/profile',{
+        templateUrl:'../partials/edit-profile.html',
+        controller:'getDataAboutMeController'
+    });
+
     $routeProvider.otherwise({
         redirectTo:'/'
     });

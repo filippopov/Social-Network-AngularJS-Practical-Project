@@ -1,4 +1,4 @@
-app.factory('userData',['$resource','baseServiceUrl','authentication',function($resource,baseServiceUrl,authentication){
+app.factory('userData',['$resource','$route','baseServiceUrl','authentication',function($resource,$route,baseServiceUrl,authentication){
 
     function registerUser(user){
         var resource = $resource(baseServiceUrl+'users/register')
@@ -25,6 +25,7 @@ app.factory('userData',['$resource','baseServiceUrl','authentication',function($
 
     function logoutUser(){
         localStorage.clear();
+        $route.reload();
     }
 
     return {

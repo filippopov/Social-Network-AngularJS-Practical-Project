@@ -8,5 +8,6 @@ app.controller('LoginController',['$scope','$route','userData','authentication',
             })
     }
     $scope.isLoggedIn=authentication.isLoggedIn();
+    console.log(authentication.getHeaders())
 
 }])
