@@ -24,14 +24,9 @@ app.factory('userData',['$resource','baseServiceUrl','authentication',function($
     }
 
     function logoutUser(){
-        return $resource(baseServiceUrl+'users/logout')
-            .save(user)
-            .$promise
-            .then(function(data){
-                authentication.removeUser();
-            })
-
+        localStorage.clear();
     }
+
     return {
         register:registerUser,
         login:loginUser,
