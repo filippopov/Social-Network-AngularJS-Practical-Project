@@ -61,7 +61,8 @@
         </div>
         <div class="panel-body">
             <form role="form">
-                <fieldset >
+                <fieldset>
+
                     <div class="form-group" >
                         <input class="form-control" placeholder="{{data.name}}" name="name" type="text" ng-model="newData.name">
                     </div>
@@ -79,7 +80,16 @@
                             <input type="radio" name="gender" id="other" value="other"/>Other
                         </label>
                     </div >
-                    <!--<a href="index.html" class="btn btn-lg btn-success btn-block" ng-click="register(user)">Register</a>-->
+                    <div class="form-group" >
+                        <label>Profile Image</label>
+                        <img ng-src="{{data.profileImageData}}" style="border: 1px solid #000000; width: 100px; height: 100px;"/>
+                        <input type="file" ng-model="newData.profileImageData">
+                    </div>
+                    <div class="form-group" >
+                        <label>Cover Image</label>
+                        <img ng-src="{{data.coverImageData}}" style="border: 1px solid #000000; width: 200px; height: 100px;"/>
+                        <input type="file" ng-model="newData.coverImageData">
+                    </div>
                     <button class="btn btn-lg btn-success btn-block" ng-click="editProfile(newData)">Edit Profil</button>
                 </fieldset>
 
@@ -88,3 +98,5 @@
     </div>
 </div>
 </div>
+
+
