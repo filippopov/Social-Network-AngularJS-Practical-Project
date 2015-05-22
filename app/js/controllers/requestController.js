@@ -12,6 +12,7 @@ app.controller('requestController', function requestController($scope, $http,$ro
         requestData.edit(request.id+'?status=approved')
             .$promise
             .then(function(data){
+                $route.reload();
                 Noty.success("Success")
             },function(error){
                 Noty.error("Error please try again")
@@ -23,6 +24,7 @@ app.controller('requestController', function requestController($scope, $http,$ro
         requestData.edit(request.id+'?status=rejected')
             .$promise
             .then(function(data){
+                $route.reload();
                 Noty.success("Success")
             },function(error){
                 Noty.error("Error please try again")

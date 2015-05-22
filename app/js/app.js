@@ -23,6 +23,12 @@ app.config(['$routeProvider',function($routeProvider){
         controller:'requestController'
     });
 
+
+    $routeProvider.when('/friends/preview',{
+        templateUrl:'../partials/all-friends.html',
+        controller:'allFriendsController'
+    });
+
     $routeProvider.otherwise({
         redirectTo:'/'
     });
