@@ -5,7 +5,12 @@ app.controller('LoginController',['$scope','$route','userData','authentication',
             .then(function(data){
 //                $location.path('/')
                 $route.reload();
+                Noty.success("Successfuly login")
+            },function(error){
+                $route.reload();
+                Noty.error("Error please try again")
             })
+
     }
     $scope.isLoggedIn=authentication.isLoggedIn();
     console.log(authentication.getHeaders())

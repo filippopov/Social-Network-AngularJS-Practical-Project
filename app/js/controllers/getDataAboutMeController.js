@@ -7,6 +7,10 @@ app.controller('getDataAboutMeController', function getDataAboutMeController($sc
             .$promise
             .then(function(data){
                 $route.reload();
+                Noty.success("Successfuly edit your profil")
+            },function(error){
+                $route.reload();
+                Noty.error("Error please try again")
             })
     }
 });

@@ -5,7 +5,12 @@ app.controller('RegisterController',['$scope','$route','userData','authenticatio
             .$promise
             .then(function(data){
                 $route.reload();
+                Noty.success("Successfuly register")
+            },function(error){
+                $route.reload();
+                Noty.error("Error please try again")
             })
+
     }
     $scope.isLoggedIn=authentication.isLoggedIn();
 }])
