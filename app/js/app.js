@@ -18,6 +18,11 @@ app.config(['$routeProvider',function($routeProvider){
         controller:'changePasswordController'
     });
 
+    $routeProvider.when('/requestInfo',{
+        templateUrl:'../partials/request-page.html',
+        controller:'requestController'
+    });
+
     $routeProvider.otherwise({
         redirectTo:'/'
     });

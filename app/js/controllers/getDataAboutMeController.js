@@ -1,7 +1,6 @@
 app.controller('getDataAboutMeController', function getDataAboutMeController($scope, $http,$route,$base64,infoUserData,authentication) {
     $http.defaults.headers.common['Authorization'] = authentication.getHeaders().Authorization;
     $scope.data = infoUserData.getAll();
-    console.log($scope.data);
     $scope.editProfile=function(newData) {
         infoUserData.edit(infoUserData.id,{name:newData.name,email:newData.email,profileImageData:newData.profileImageData,coverImageData:newData.coverImageData})
             .$promise
