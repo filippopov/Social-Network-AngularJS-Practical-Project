@@ -1,4 +1,4 @@
-var app=angular.module('adsApp', ['ngRoute','ngResource']);
+var app=angular.module('adsApp', ['ngRoute','ngResource','base64']);
 
 app.constant('baseServiceUrl', 'http://softuni-social-network.azurewebsites.net/api/')
 
