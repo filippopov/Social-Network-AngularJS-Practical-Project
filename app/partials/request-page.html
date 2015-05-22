@@ -53,9 +53,10 @@
                         <div class="form-group" >
                             <label>{{request.user.name}}</label>
                             <img ng-src="{{request.user.profileImageData}}" style="border: 1px solid #000000; width: 75px; height: 75px;"/>
+                            <!--<div ng-model="request.id"></div>-->
                         </div>
-                        <button class="btn btn-lg btn-success btn-block"">Accept</button>
-                        <button class="btn btn-lg btn-success btn-block"">Reject</button>
+                        <button class="btn btn-lg btn-success btn-block" ng-click="requestAccept(request)">Accept</button>
+                        <button class="btn btn-lg btn-success btn-block" ng-click="requestReject(request)">Reject</button>
                     </fieldset>
 
                 </form>
