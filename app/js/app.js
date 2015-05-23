@@ -29,6 +29,11 @@ app.config(['$routeProvider',function($routeProvider){
         controller:'allFriendsController'
     });
 
+    $routeProvider.when('/users/:username',{
+        templateUrl:'../partials/user-wall.html',
+        controller:'getUserController'
+    });
+
     $routeProvider.otherwise({
         redirectTo:'/'
     });
