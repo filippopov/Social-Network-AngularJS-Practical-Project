@@ -19,6 +19,10 @@ app.factory('getUserData', function getUserData($resource,baseServiceUrl) {
         return resource.get({id: id});
     }
 
+    function getAdByIdWithQuery(id) {
+        return resource.query({id: id});
+    }
+
     function editAd(id, ad) {
         return resource.update({id: id}, ad);
     }
@@ -31,6 +35,7 @@ app.factory('getUserData', function getUserData($resource,baseServiceUrl) {
         getAll: getAllAds,
         create: createNewAd,
         getById: getAdById,
+        getAdByIdWithQuery:getAdByIdWithQuery,
         edit: editAd,
         delete: deleteAd
     }

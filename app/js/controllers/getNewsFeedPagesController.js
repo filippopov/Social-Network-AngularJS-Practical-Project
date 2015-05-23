@@ -4,6 +4,7 @@ app.controller('getNewsFeedPagesController', function getNewsFeedPagesController
         .$promise
         .then(function(data){
             $scope.pagesInfo=data;
+            console.log($scope.pagesInfo)
             var like=data[1].liked;
             function isLike(like){
                 if(like){

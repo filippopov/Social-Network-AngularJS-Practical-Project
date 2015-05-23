@@ -31,7 +31,7 @@ app.config(['$routeProvider',function($routeProvider){
 
     $routeProvider.when('/users/:username',{
         templateUrl:'../partials/user-wall.html',
-        controller:'getUserController'
+        controller:'userController'
     });
 
     $routeProvider.otherwise({
