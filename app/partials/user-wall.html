@@ -56,18 +56,15 @@
 </nav>
 
 
-<div>
-    dsfkjdsfdskjfsdfs dsfdsklfsdsfsklfsfk
-    <h1 style="border: 1px solid #000000">{{informationData.username}}</h1>
-    <h1>{{userInfoData.username}}</h1>
-    <h1>{{probaVun}}</h1>
-    <h1>{{proba}}</h1>
-    <h1>{{daTiEbaMaikata}}</h1>
-    <h1>{{kakvoStava}}</h1>
+<div ng-controller="userController">
+    <img ng-src="{{userInfoData.coverImageData}}" style="width: 100%;height: 100px"/>
+    <div style="float: right; margin-bottom: 50px">
+        <h3 style="display: inline">{{userInfoData.username}}</h3>
+        <img ng-src="{{userInfoData.profileImageData}}" style="width: 50px;height: 50px"/>
+    </div>
 </div>
 
-
-<div class="col-md-6 col-md-offset-2">
+<div class="col-md-5 col-md-offset-2" ng-controller="userController">
     <div class="login-panel panel panel-default">
         <fieldset>
             <div ng-repeat="wall in wallData" style="border: 1px solid #000000;margin: 15px">
@@ -92,5 +89,43 @@
                 </div>
             </div>
         </fieldset>
+    </div>
+</div>
+<div class="col-md-3 col-md-offset-1">
+    <div class="login-panel panel panel-default" ng-controller="sendPostController">
+        <div class="panel-heading">
+            <h3 class="panel-title">Send Message</h3>
+        </div>
+        <div class="panel-body">
+            <form role="form">
+                <fieldset ng-controller="userController">
+                    <div class="form-group">
+                        <textarea class="form-control" placeholder="Message" ng-model="text"></textarea>
+                    </div>
+                    <div ng-controller="getDataAboutMeController"><img ng-src="{{data.profileImageData}}" style="border: 1px solid #000000; width: 20px; height: 15px;"> as {{data.name}}</div>
+                    <div ng-model="nameValue">
+                        {{name=userInfoData.username}}
+                        <h1 ng-model="name" ng-hide="true">{{name}}</h1>
+                        <button class="btn btn-lg btn-success btn-block" ng-click="sendMsg(text,name)">Submit</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div id="wrapper" ng-controller="allFriendsController" >
+    <div class="col-md-2 col-md-offset-2">
+        <div class="login-panel panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"><a href="#/friends/preview">Friends</a></h3>
+            </div>
+            <fieldset ng-repeat="userFriend in userFriends">
+
+                <a href=""><img ng-src="{{userFriend.profileImageData}}" style="border: 1px solid #000000; width: 75px; height: 75px;"/></a>
+
+            </fieldset>
+        </div>
     </div>
 </div>

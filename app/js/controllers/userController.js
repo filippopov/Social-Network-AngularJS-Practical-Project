@@ -34,7 +34,15 @@ app.controller('userController',['$scope','$rootScope','$http','$route','infoUse
         })
 
 
-}
+        $scope.userFriendsData = getUserData.getAdByIdWithQuery(myFriend.username + '/friends')
+            .$promise
+            .then(function (data) {
+                $rootScope.userFriends = data;
+            }, function (error) {
+                Noty.error("Error please try again")
+            })
+
+    }
 
 
 

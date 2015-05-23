@@ -55,7 +55,7 @@
 
 
 <div class="col-md-6 col-md-offset-2">
-    <div class="login-panel panel panel-default">
+    <div class="login-panel panel panel-default" >
         <fieldset ng-controller="getNewsFeedPagesController">
             <div ng-repeat="post in pagesInfo" style="border: 1px solid #000000;margin: 15px">
                 <div>
@@ -87,9 +87,9 @@
             <div class="panel-heading">
                 <h3 class="panel-title"><a href="#/friends/preview">Friends</a></h3>
             </div>
-            <fieldset ng-repeat="myFriend in myFriends">
+            <fieldset ng-repeat="myFriend in myFriends" ng-controller="userController">
 
-                    <a href=""><img ng-src="{{myFriend.profileImageData}}" style="border: 1px solid #000000; width: 75px; height: 75px;"/></a>
+                    <a href="#/users/{{myFriend.username}}" ng-click="getUserName(myFriend)"><img ng-src="{{myFriend.profileImageData}}" style="border: 1px solid #000000; width: 75px; height: 75px;"/></a>
 
             </fieldset>
         </div>
