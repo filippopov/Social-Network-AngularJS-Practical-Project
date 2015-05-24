@@ -71,11 +71,13 @@
                 <div style="margin: 10px;padding: 10px">
                     {{post.postContent}}
                 </div>
-                <div>
+                <div ng-controller="likeAndUnlikePostsController">
                     <div style="display: inline;float: right;margin-bottom: 10px">
                         {{post.likesCount}}
-                        <a href="#" ng-if="!isLike">like</a>
-                        <a href="#" ng-if="!!isLike">unlike</a>
+                        <button ng-if="!isLike" ng-click="like(post)">like</button>
+                        <button ng-if="!!isLike" ng-click="unlike(post)">unlike</button>
+                        <!--<a href="#" ng-if="!isLike">like</a>-->
+                        <!--<a href="#" ng-if="!!isLike">unlike</a>-->
                         {{post.totalCommentsCount}}
                         <a href="#">Comment</a>
                     </div>

@@ -17,21 +17,14 @@ app.controller('userController',['$scope','$rootScope','$http','$route','infoUse
         .$promise
         .then(function (data) {
             $rootScope.wallData = data;
-            if(data[1].liked==true||data[1].liked==false){
                 var like = data[1].liked;
-
                 function isLike(like) {
                     if (like) {
                         return true;
                     }
                     return false;
                 }
-
                 $scope.isLike = isLike(like);
-            }else{
-                var like=false;
-                $scope.isLike = isLike(like);
-            }
         }, function (error) {
             Noty.error("Error please try again")
         })

@@ -1,6 +1,6 @@
-app.factory('searchUserByName', function searchUserByName($resource,baseServiceUrl) {
+app.factory('likeAndUnlikePostsData', function likeAndUnlikePostsData($resource,baseServiceUrl) {
     var resource = $resource(
-            baseServiceUrl+'users/search?searchTerm=:id',
+            baseServiceUrl+'Posts/:id',
         {id: '@id'},
         { update: {
             method: 'PUT'
@@ -16,7 +16,7 @@ app.factory('searchUserByName', function searchUserByName($resource,baseServiceU
     }
 
     function getAdById(id) {
-        return resource.query({id: id});
+        return resource.get({id: id});
     }
 
     function editAd(id, ad) {

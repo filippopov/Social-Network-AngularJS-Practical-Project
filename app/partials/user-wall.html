@@ -79,11 +79,11 @@
                 <div style="margin: 10px;padding: 10px">
                     {{wall.postContent}}
                 </div>
-                <div>
+                <div ng-controller="likeAndUnlikePostsController">
                     <div style="display: inline;float: right;margin-bottom: 10px">
                         {{wall.likesCount}}
-                        <a href="#" ng-if="!isLike">like</a>
-                        <a href="#" ng-if="!!isLike">unlike</a>
+                        <button ng-if="!isLike" ng-click="like(wall)">like</button>
+                        <button ng-if="!!isLike" ng-click="unlike(wall)">unlike</button>
                         {{wall.totalCommentsCount}}
                         <a href="#">Comment</a>
                     </div>
@@ -130,3 +130,4 @@
         </div>
     </div>
 </div>
+
