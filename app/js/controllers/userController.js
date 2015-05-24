@@ -8,7 +8,6 @@ app.controller('userController',['$scope','$rootScope','$http','$route','infoUse
         .$promise
         .then(function (data) {
             $rootScope.userInfoData = data;
-            console.log($rootScope.userInfoData)
         }, function (error) {
             Noty.error("Error please try again")
         })
@@ -18,17 +17,21 @@ app.controller('userController',['$scope','$rootScope','$http','$route','infoUse
         .$promise
         .then(function (data) {
             $rootScope.wallData = data;
-            var like = data[1].liked;
+            if(data[1].liked==true||data[1].liked==false){
+                var like = data[1].liked;
 
-            function isLike(like) {
-                if (like) {
-                    return true;
+                function isLike(like) {
+                    if (like) {
+                        return true;
+                    }
+                    return false;
                 }
-                return false;
-            }
 
-            $scope.isLike = isLike(like);
-            console.log($scope.wallData)
+                $scope.isLike = isLike(like);
+            }else{
+                var like=false;
+                $scope.isLike = isLike(like);
+            }
         }, function (error) {
             Noty.error("Error please try again")
         })

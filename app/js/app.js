@@ -34,6 +34,11 @@ app.config(['$routeProvider',function($routeProvider){
         controller:'userController'
     });
 
+    $routeProvider.when('/searchInfo',{
+        templateUrl:'../partials/search-page.html',
+        controller:'searchUserByNameController'
+    });
+
     $routeProvider.otherwise({
         redirectTo:'/'
     });

@@ -4,7 +4,6 @@ app.controller('getNewsFeedPagesController', function getNewsFeedPagesController
         .$promise
         .then(function(data){
             $scope.pagesInfo=data;
-            console.log($scope.pagesInfo)
             var like=data[1].liked;
             function isLike(like){
                 if(like){
@@ -13,8 +12,6 @@ app.controller('getNewsFeedPagesController', function getNewsFeedPagesController
                 return false;
             }
             $scope.isLike=isLike(like)
-            console.log($scope.isLike);
-            console.log(data);
             $scope.myFriends=data;
         },function(error){
         })
